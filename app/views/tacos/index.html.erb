@@ -1,0 +1,19 @@
+<h1>Tacos!!!</h1>
+<p>I love tacos.</p>
+
+<ul>
+ <li>Tacos1</li>
+ <li>Tacos2</li>
+ <li>Tacos3</li>
+</ul>
+
+<!-- Comment: the following is how to insert Ruby code in a webpage. -->
+<% fillings = ["tacos1", "tacos2", "tacos3"] %>
+<p>We have <%= fillings.count %> tacos!</p>      <!--Showable content-->
+
+<!-- Loop through the HTML -->
+<ul>
+  <% for filling in fillings %>
+  <li><%= filling %></li>
+  <% end %>
+</ul>
