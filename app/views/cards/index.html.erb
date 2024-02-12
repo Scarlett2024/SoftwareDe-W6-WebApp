@@ -1,0 +1,34 @@
+<h1>This is the cards game.</h1>
+<!-- Build a deck of cards. Given the following arrays, 
+use a loop to write out every combination to the screen.-->
+
+<%
+ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
+suits = ["Clubs", "Diamonds", "Hearts", "Spades"]
+n = 0
+cards = []
+%>
+
+<ul>
+<% for rank in ranks %>
+<% for suit in suits %>
+<li><%= rank %> of <%= suit %></li>
+<% 
+n = n+1 
+combination = rank.to_s + " of " + suit
+cards.push(combination)
+%>
+<%end%>
+<%end%>
+<p>There are <%= n %> combinations in total.</p>
+</ul>
+
+<p><strong>Display a random poker hand of 5 cards:<strong></p>
+
+<ul>
+<li> Card 1 is <%= cards[rand(0..cards.length-1)] %>. </li>
+<li> Card 2 is <%= cards[rand(0..cards.length-1)] %>. </li>
+<li> Card 3 is <%= cards[rand(0..cards.length-1)] %>. </li>
+<li> Card 4 is <%= cards[rand(0..cards.length-1)] %>. </li>
+<li> Card 5 is <%= cards[rand(0..cards.length-1)] %>. </li>
+</ul>
