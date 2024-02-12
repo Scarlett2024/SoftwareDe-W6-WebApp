@@ -1,0 +1,10 @@
+<h1>Company Tab</h1>
+
+<% companies = Company.all %>
+
+<p>These are all the companies:</p>
+<ul>
+<% for company in companies %>
+<li> <%= company["name"] %> </li>
+<% end %>
+</ul>
