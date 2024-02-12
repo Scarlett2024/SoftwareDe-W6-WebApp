@@ -8,3 +8,17 @@
 <li> <%= company["name"] %> </li>
 <% end %>
 </ul>
+
+<% contacts = Contact.all %>
+
+<p>These are all the contacts in the companies:</p>
+<ul>
+<% 
+for contact in contacts 
+  companyid = contact["company_id"]
+  company_target = Company.find_by({"id" => companyid})
+%>
+<li>Name is <%= contact["first_name"] %> <%= contact["last_name"] %>, 
+company is <%= company_target["name"] %>.</li>
+<% end %>
+</ul>
